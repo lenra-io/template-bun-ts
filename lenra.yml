@@ -1,21 +1,23 @@
-componentsApi: "1.0"
 generator:
   dofigen:
     builders:
-      - from: "oven/bun"
+      - name: bun-install
+        from: oven/bun
         workdir: /app
         root:
           script:
             - chown -R 1000:1000 /app
         adds:
-          - "package.json"
-          - "bun.lockb"
+          - package.json
+          - bun.lockb
         script:
           - bun install --production
-    from: builder-0
-    root:
-      script:
-        - chmod +r -R /app
+      - name: read-access
+        from: bun-install
+        root:
+          script:
+            - chmod +r -R /app
+    from: read-access
     adds:
       - .
     cmd:
