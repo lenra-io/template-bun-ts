@@ -14,13 +14,13 @@
   "author": "Lenra",
   "license": "MIT",
   "dependencies": {
-    "@lenra/app": "^1.1.0"
+    "@lenra/app": "^1.2.0"
   },
   "app-lenra": {
     "app": "app.ts",
     "indexer": "ts"
   },
   "devDependencies": {
-    "bun-types": "^1.0.5-canary.20231007T140129"
+    "@types/bun": "^1.0.6"
   }
 }
