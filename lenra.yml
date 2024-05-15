@@ -33,8 +33,7 @@ generator:
       interval: 1s
       timeout: 1s
       start: 200ms
-    ignores:
-      - "**"
-      - "!/package.json"
-      - "!/bun.lockb"
-      - "!/src/"
+    context:
+      - "/package.json"
+      - "/bun.lockb"
+      - "/src/"
